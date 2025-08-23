@@ -21,9 +21,14 @@ const CARDS = [
     chips: ["No consultório", "Alívio em dias"],
     images: [
       {
-        src: `${import.meta.env.BASE_URL}images/tratamentos/acido-hialuronico-equipamento.PNG`,
+        src: `${import.meta.env.BASE_URL}images/tratamentos/acido-hialuronico-equipamento.jpg`,
         alt: "Equipamento para aplicação de ácido hialurônico",
-        caption: "Aplicação guiada por ultrassom para maior precisão"
+        caption: "Aplicação guiada por ultrassom para maior precisão",
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/tratamentos/acido-hialuronico-procedimento.jpg`,
+        alt: "Aplicação de ácido hialurônico no joelho",
+        caption: "Procedimento realizado no consultório com anestesia local",
       }
     ],
     details: (
@@ -39,8 +44,8 @@ const CARDS = [
         <div className="mt-4">
           <h4 className="font-semibold text-text mb-2">Como funciona:</h4>
           <p className="text-xs text-muted">
-            O ácido hialurônico é injetado diretamente na articulação do joelho, 
-            restaurando a viscosidade do líquido sinovial e proporcionando 
+            O ácido hialurônico é injetado diretamente na articulação do joelho,
+            restaurando a viscosidade do líquido sinovial e proporcionando
             lubrificação natural.
           </p>
         </div>
@@ -57,7 +62,12 @@ const CARDS = [
       {
         src: `${import.meta.env.BASE_URL}images/tratamentos/bloqueio-equipamento.jpeg`,
         alt: "Equipamento de radiofrequência para bloqueio",
-        caption: "Tecnologia de radiofrequência de última geração"
+        caption: "Tecnologia de radiofrequência de última geração",
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/tratamentos/bloqueio-nervos.jpeg`,
+        alt: "Ilustração dos nervos geniculares do joelho",
+        caption: "O bloqueio atinge os nervos responsáveis pela dor na articulação",
       }
     ],
     details: (
@@ -76,7 +86,7 @@ const CARDS = [
         <div className="mt-4">
           <h4 className="font-semibold text-text mb-2">Duração do alívio:</h4>
           <p className="text-xs text-muted">
-            O procedimento pode proporcionar alívio por 3 a 6 meses, 
+            O procedimento pode proporcionar alívio por 3 a 6 meses,
             podendo ser repetido conforme necessário.
           </p>
         </div>
@@ -94,7 +104,12 @@ const CARDS = [
       {
         src: `${import.meta.env.BASE_URL}images/tratamentos/radioablacao-equipamento.jpg`,
         alt: "Equipamento de radioablação",
-        caption: "Sistema de radiofrequência para ablação precisa"
+        caption: "Sistema de radiofrequência para ablação precisa",
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/tratamentos/radioablacao-procedimento.jpg`,
+        alt: "Procedimento de radioablação no joelho",
+        caption: "Agulhas posicionadas para tratar os nervos da dor",
       }
     ],
     details: (
@@ -127,7 +142,12 @@ const CARDS = [
       {
         src: `${import.meta.env.BASE_URL}images/tratamentos/bma-coleta.jpg`,
         alt: "Processo de coleta de medula óssea",
-        caption: "Coleta minimamente invasiva da medula óssea"
+        caption: "Coleta minimamente invasiva da medula óssea",
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/tratamentos/bma-aplicacao.jpg`,
+        alt: "Aplicação de BMA no joelho",
+        caption: "As células-tronco concentradas são injetadas na articulação",
       }
     ],
     details: (
@@ -162,7 +182,12 @@ const CARDS = [
       {
         src: `${import.meta.env.BASE_URL}images/tratamentos/laser-equipamento.jpg`,
         alt: "Equipamento de laser de alta intensidade",
-        caption: "Sistema de laser classe IV para fotobiomodulação"
+        caption: "Sistema de laser classe IV para fotobiomodulação",
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/tratamentos/laser-aplicacao.PNG`,
+        alt: "Aplicação de laserterapia no joelho",
+        caption: "Sessão de fotobiomodulação para alívio da dor e inflamação",
       }
     ],
     details: (
@@ -178,7 +203,7 @@ const CARDS = [
         <div className="mt-4">
           <h4 className="font-semibold text-text mb-2">Mecanismo de ação:</h4>
           <p className="text-xs text-muted">
-            O laser estimula a produção de ATP celular, acelera a cicatrização 
+            O laser estimula a produção de ATP celular, acelera a cicatrização
             e reduz marcadores inflamatórios de forma natural.
           </p>
         </div>
@@ -212,7 +237,7 @@ function TratamentoCard({ item, className = "" }) {
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-bg/60 via-transparent to-transparent" />
-            
+
             {/* Ícones sobrepostos no canto inferior da imagem */}
             <div className="absolute bottom-3 left-3 flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-bg/80 backdrop-blur-sm ring-1 ring-white/20">
@@ -255,27 +280,27 @@ function TratamentoCard({ item, className = "" }) {
               }
             >
               <div className="space-y-6">
-                {/* Imagem expandida no modal */}
-                {item.images && item.images[0] && (
+                {/* Segunda imagem no modal (diferente da do card) */}
+                {item.images?.[1] && (
                   <div className="space-y-3">
                     <div className="relative overflow-hidden rounded-lg bg-bg2/50 aspect-[16/9] flex items-center justify-center">
                       <img
-                        src={item.images[0].src}
-                        alt={item.images[0].alt}
+                        src={item.images[1].src}
+                        alt={item.images[1].alt}
                         className="max-w-full max-h-full object-contain"
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent pointer-events-none" />
                     </div>
                     <p className="text-xs text-muted text-center">
-                      {item.images[0].caption}
+                      {item.images[1].caption}
                     </p>
                   </div>
                 )}
-                
+
                 {/* Conteúdo detalhado */}
                 <div>{item.details}</div>
-                
+
                 {/* Call to action no modal */}
                 <div className="pt-4 border-t border-line/30">
                   <Button asChild variant="gold" className="w-full font-bold">
@@ -299,23 +324,23 @@ export function Tratamentos() {
     <section id="tratamentos" className="relative overflow-hidden">
       {/* Background com padrão geométrico médico */}
       <div className="absolute inset-0 bg-gradient-to-b from-bg via-bg2/20 to-bg" />
-      
+
       {/* Padrão de hexágonos */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2366E0DB' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}
       />
-      
+
       {/* Padrão de linhas cruzadas sutis */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2366E0DB' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`
         }}
       />
-      
+
       {/* Elementos moleculares flutuantes */}
       <div className="absolute top-10 left-10 w-20 h-20 rounded-full border border-accent/5 flex items-center justify-center animate-pulse">
         <div className="w-2 h-2 rounded-full bg-accent/10 animate-ping" />
@@ -325,17 +350,17 @@ export function Tratamentos() {
         <div className="w-1.5 h-1.5 rounded-full bg-accent/10 animate-ping" style={{ animationDelay: '2s' }} />
       </div>
       <div className="absolute bottom-32 right-20 w-24 h-24 rounded-full border border-accent/5 animate-pulse" style={{ animationDelay: '0.5s' }} />
-      
+
       {/* Elementos flutuantes com movimento lento */}
       <div className="absolute top-1/4 left-1/4 w-6 h-6 rounded-full bg-accent/5 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1.5s' }} />
       <div className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-accent/5 animate-pulse" style={{ animationDuration: '5s' }} />
       <div className="absolute bottom-1/4 left-3/4 w-8 h-8 rounded-full bg-accent/5 animate-bounce" style={{ animationDuration: '6s', animationDelay: '2s' }} />
-      
+
       {/* Partículas pequenas com movimento */}
       <div className="absolute top-20 right-1/4 w-2 h-2 rounded-full bg-accent/10 animate-ping" style={{ animationDuration: '2s' }} />
       <div className="absolute bottom-40 left-1/3 w-1 h-1 rounded-full bg-accent/10 animate-ping" style={{ animationDuration: '3s', animationDelay: '1s' }} />
       <div className="absolute top-2/3 right-20 w-3 h-3 rounded-full bg-accent/10 animate-pulse" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
-      
+
       <div className="relative mx-auto max-w-7xl px-4 py-16 md:py-20">
         <FadeIn>
           <div className="max-w-3xl">
