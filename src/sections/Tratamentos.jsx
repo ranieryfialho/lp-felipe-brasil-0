@@ -201,77 +201,93 @@ function TratamentoCard({ item, className = "" }) {
 
   return (
     <CardSpotlight className={`w-full h-full ${className}`}>
-      <div className="relative flex h-full w-full flex-col rounded-2xl border border-line/40 bg-bg/60 p-5 shadow-lg backdrop-blur-sm ring-1 ring-white/5">
-        {/* Ícones */}
-        <div className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-bg2/60 ring-1 ring-white/10">
-            <Icon className="h-5 w-5 text-accent" />
-          </div>
-          {Icon2 && (
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-bg2/60 ring-1 ring-white/10">
-              <Icon2 className="h-5 w-5 text-accent2" />
-            </div>
-          )}
-        </div>
-
-        {/* Títulos */}
-        <h3 className="mt-4 font-title text-lg md:text-xl leading-snug text-text">
-          {item.title}
-        </h3>
-        <p className="text-sm text-muted">{item.subtitle}</p>
-
-        {/* Chips */}
-        {item.chips?.length ? (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {item.chips.map((c) => (
-              <Chip key={c}>{c}</Chip>
-            ))}
-          </div>
-        ) : null}
-
-        {/* Ações */}
-        <div className="mt-6 flex flex-wrap gap-2">
-          <Modal
-            title={item.title}
-            trigger={
-              <Button variant="outline" className="font-medium">
-                Saiba mais
-              </Button>
-            }
-          >
-            <div className="space-y-6">
-              {/* Imagem única */}
-              {item.images && item.images[0] && (
-                <div className="space-y-3">
-                  <div className="relative overflow-hidden rounded-lg bg-bg2/50 aspect-[16/9] flex items-center justify-center">
-                    <img
-                      src={item.images[0].src}
-                      alt={item.images[0].alt}
-                      className="max-w-full max-h-full object-contain"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent pointer-events-none" />
-                  </div>
-                  <p className="text-xs text-muted text-center">
-                    {item.images[0].caption}
-                  </p>
+      <div className="relative flex h-full w-full flex-col rounded-2xl border border-line/40 bg-bg/60 shadow-lg backdrop-blur-sm ring-1 ring-white/5 overflow-hidden">
+        {/* Imagem no topo */}
+        {item.images && item.images[0] && (
+          <div className="relative aspect-[4/5] w-full overflow-hidden">
+            <img
+              src={item.images[0].src}
+              alt={item.images[0].alt}
+              className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg/60 via-transparent to-transparent" />
+            
+            {/* Ícones sobrepostos no canto inferior da imagem */}
+            <div className="absolute bottom-3 left-3 flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-bg/80 backdrop-blur-sm ring-1 ring-white/20">
+                <Icon className="h-4 w-4 text-accent" />
+              </div>
+              {Icon2 && (
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-bg/80 backdrop-blur-sm ring-1 ring-white/20">
+                  <Icon2 className="h-4 w-4 text-accent2" />
                 </div>
               )}
-              
-              {/* Conteúdo detalhado */}
-              <div>{item.details}</div>
-              
-              {/* Call to action no modal */}
-              <div className="pt-4 border-t border-line/30">
-                <Button asChild variant="gold" className="w-full font-bold">
-                  <a href="#contato">Quero este tratamento</a>
-                </Button>
-              </div>
             </div>
-          </Modal>
-          <Button asChild variant="gold" className="font-bold">
-            <a href="#contato">Quero este tratamento</a>
-          </Button>
+          </div>
+        )}
+
+        {/* Conteúdo textual */}
+        <div className="flex flex-1 flex-col p-5">
+          {/* Títulos */}
+          <h3 className="font-title text-lg md:text-xl leading-snug text-text">
+            {item.title}
+          </h3>
+          <p className="mt-1 text-sm text-muted">{item.subtitle}</p>
+
+          {/* Chips */}
+          {item.chips?.length ? (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {item.chips.map((c) => (
+                <Chip key={c}>{c}</Chip>
+              ))}
+            </div>
+          ) : null}
+
+          {/* Ações */}
+          <div className="mt-auto pt-4 flex flex-wrap gap-2">
+            <Modal
+              title={item.title}
+              trigger={
+                <Button variant="outline" className="font-medium">
+                  Saiba mais
+                </Button>
+              }
+            >
+              <div className="space-y-6">
+                {/* Imagem expandida no modal */}
+                {item.images && item.images[0] && (
+                  <div className="space-y-3">
+                    <div className="relative overflow-hidden rounded-lg bg-bg2/50 aspect-[16/9] flex items-center justify-center">
+                      <img
+                        src={item.images[0].src}
+                        alt={item.images[0].alt}
+                        className="max-w-full max-h-full object-contain"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent pointer-events-none" />
+                    </div>
+                    <p className="text-xs text-muted text-center">
+                      {item.images[0].caption}
+                    </p>
+                  </div>
+                )}
+                
+                {/* Conteúdo detalhado */}
+                <div>{item.details}</div>
+                
+                {/* Call to action no modal */}
+                <div className="pt-4 border-t border-line/30">
+                  <Button asChild variant="gold" className="w-full font-bold">
+                    <a href="#contato">Quero este tratamento</a>
+                  </Button>
+                </div>
+              </div>
+            </Modal>
+            <Button asChild variant="gold" className="font-bold">
+              <a href="#contato">Quero este tratamento</a>
+            </Button>
+          </div>
         </div>
       </div>
     </CardSpotlight>
@@ -280,8 +296,47 @@ function TratamentoCard({ item, className = "" }) {
 
 export function Tratamentos() {
   return (
-    <section id="tratamentos" className="relative">
-      <div className="mx-auto max-w-7xl px-4 py-16 md:py-20">
+    <section id="tratamentos" className="relative overflow-hidden">
+      {/* Background com padrão geométrico médico */}
+      <div className="absolute inset-0 bg-gradient-to-b from-bg via-bg2/20 to-bg" />
+      
+      {/* Padrão de hexágonos */}
+      <div 
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2366E0DB' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}
+      />
+      
+      {/* Padrão de linhas cruzadas sutis */}
+      <div 
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2366E0DB' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`
+        }}
+      />
+      
+      {/* Elementos moleculares flutuantes */}
+      <div className="absolute top-10 left-10 w-20 h-20 rounded-full border border-accent/5 flex items-center justify-center animate-pulse">
+        <div className="w-2 h-2 rounded-full bg-accent/10 animate-ping" />
+      </div>
+      <div className="absolute top-32 right-16 w-16 h-16 rounded-full border border-accent/5 animate-bounce" style={{ animationDuration: '3s' }} />
+      <div className="absolute bottom-20 left-32 w-12 h-12 rounded-full border border-accent/5 flex items-center justify-center animate-pulse" style={{ animationDelay: '1s' }}>
+        <div className="w-1.5 h-1.5 rounded-full bg-accent/10 animate-ping" style={{ animationDelay: '2s' }} />
+      </div>
+      <div className="absolute bottom-32 right-20 w-24 h-24 rounded-full border border-accent/5 animate-pulse" style={{ animationDelay: '0.5s' }} />
+      
+      {/* Elementos flutuantes com movimento lento */}
+      <div className="absolute top-1/4 left-1/4 w-6 h-6 rounded-full bg-accent/5 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1.5s' }} />
+      <div className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-accent/5 animate-pulse" style={{ animationDuration: '5s' }} />
+      <div className="absolute bottom-1/4 left-3/4 w-8 h-8 rounded-full bg-accent/5 animate-bounce" style={{ animationDuration: '6s', animationDelay: '2s' }} />
+      
+      {/* Partículas pequenas com movimento */}
+      <div className="absolute top-20 right-1/4 w-2 h-2 rounded-full bg-accent/10 animate-ping" style={{ animationDuration: '2s' }} />
+      <div className="absolute bottom-40 left-1/3 w-1 h-1 rounded-full bg-accent/10 animate-ping" style={{ animationDuration: '3s', animationDelay: '1s' }} />
+      <div className="absolute top-2/3 right-20 w-3 h-3 rounded-full bg-accent/10 animate-pulse" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
+      
+      <div className="relative mx-auto max-w-7xl px-4 py-16 md:py-20">
         <FadeIn>
           <div className="max-w-3xl">
             <Badge className="mb-3">Tratamentos</Badge>

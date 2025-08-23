@@ -9,7 +9,7 @@ export function Header() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll(); // já checa ao carregar (ex.: âncora)
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -18,10 +18,28 @@ export function Header() {
     { href: "#tratamentos", label: "Tratamentos" },
     { href: "#diferenciais", label: "Diferenciais" },
     { href: "#depoimentos", label: "Depoimentos" },
-    { href: "#sobre", label: "Sobre" },
+    { href: "#especialista", label: "Sobre" },
     { href: "#faq", label: "FAQ" },
-    { href: "#contato", label: "Contato" },
   ];
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const targetId = href.substring(1);
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      const headerHeight = 80; // altura aproximada do header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+    
+    setOpen(false);
+  };
 
   return (
     <header
@@ -43,6 +61,7 @@ export function Header() {
             <a
               key={l.href}
               href={l.href}
+              onClick={(e) => handleNavClick(e, l.href)}
               className="text-sm text-muted hover:text-text transition-colors"
             >
               {l.label}
@@ -74,7 +93,7 @@ export function Header() {
               <a
                 key={l.href}
                 href={l.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => handleNavClick(e, l.href)}
                 className="text-sm text-muted hover:text-text"
               >
                 {l.label}
