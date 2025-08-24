@@ -322,7 +322,6 @@ function TratamentoCard({ item, className = "" }) {
               }
             >
               <div className="space-y-6">
-                {/* Segunda imagem no modal (diferente da do card) */}
                 {item.images?.[1] && (
                   <div className="space-y-3">
                     <div className="relative overflow-hidden rounded-lg bg-bg2/50 aspect-[16/9] flex items-center justify-center">
@@ -340,10 +339,8 @@ function TratamentoCard({ item, className = "" }) {
                   </div>
                 )}
 
-                {/* Conteúdo detalhado */}
                 <div>{item.details}</div>
 
-                {/* Call to action no modal */}
                 <div className="pt-4 border-t border-line/30">
                   <Button asChild variant="gold" className="w-full font-bold">
                     <a href="#contato">Quero este tratamento</a>
@@ -364,10 +361,8 @@ function TratamentoCard({ item, className = "" }) {
 export function Tratamentos() {
   return (
     <section id="tratamentos" className="relative overflow-hidden">
-      {/* Background com padrão geométrico médico */}
       <div className="absolute inset-0 bg-gradient-to-b from-bg via-bg2/20 to-bg" />
 
-      {/* Padrão de hexágonos */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -375,7 +370,6 @@ export function Tratamentos() {
         }}
       />
 
-      {/* Padrão de linhas cruzadas sutis */}
       <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
@@ -383,7 +377,6 @@ export function Tratamentos() {
         }}
       />
 
-      {/* Elementos moleculares flutuantes */}
       <div className="absolute top-10 left-10 w-20 h-20 rounded-full border border-accent/5 flex items-center justify-center animate-pulse">
         <div className="w-2 h-2 rounded-full bg-accent/10 animate-ping" />
       </div>
@@ -393,12 +386,10 @@ export function Tratamentos() {
       </div>
       <div className="absolute bottom-32 right-20 w-24 h-24 rounded-full border border-accent/5 animate-pulse" style={{ animationDelay: '0.5s' }} />
 
-      {/* Elementos flutuantes com movimento lento */}
       <div className="absolute top-1/4 left-1/4 w-6 h-6 rounded-full bg-accent/5 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1.5s' }} />
       <div className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-accent/5 animate-pulse" style={{ animationDuration: '5s' }} />
       <div className="absolute bottom-1/4 left-3/4 w-8 h-8 rounded-full bg-accent/5 animate-bounce" style={{ animationDuration: '6s', animationDelay: '2s' }} />
 
-      {/* Partículas pequenas com movimento */}
       <div className="absolute top-20 right-1/4 w-2 h-2 rounded-full bg-accent/10 animate-ping" style={{ animationDuration: '2s' }} />
       <div className="absolute bottom-40 left-1/3 w-1 h-1 rounded-full bg-accent/10 animate-ping" style={{ animationDuration: '3s', animationDelay: '1s' }} />
       <div className="absolute top-2/3 right-20 w-3 h-3 rounded-full bg-accent/10 animate-pulse" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
@@ -417,7 +408,6 @@ export function Tratamentos() {
           </div>
         </FadeIn>
 
-        {/* Layout responsivo conforme o croqui */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           {CARDS.map((card, index) => (
             <FadeIn key={card.id} delay={0.05 * (index + 1)}>
