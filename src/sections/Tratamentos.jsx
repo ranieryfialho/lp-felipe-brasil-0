@@ -10,6 +10,7 @@ import {
   Snowflake,
   Dna,
   SunMedium,
+  Waves,
 } from "lucide-react";
 
 const CARDS = [
@@ -210,6 +211,47 @@ const CARDS = [
       </div>
     ),
   },
+  {
+    id: "ondas-de-choque",
+    icon: Waves,
+    title: "Terapia por Ondas de Choque",
+    subtitle: "Estímulo profundo para regenerar e aliviar",
+    chips: ["No consultório", "Sessões rápidas"],
+    images: [
+      {
+        src: `${import.meta.env.BASE_URL}images/tratamentos/ondas-de-choque-equipamento.jpg`,
+        alt: "Equipamento de terapia por ondas de choque",
+        caption: "Ondas acústicas de alta energia para tratamento focado.",
+      },
+      {
+        src: `${import.meta.env.BASE_URL}images/tratamentos/ondas-de-choque-aplicacao.jpg`,
+        alt: "Aplicação de terapia por ondas de choque",
+        caption: "Procedimento não invasivo para acelerar a recuperação.",
+      },
+    ],
+    details: (
+      <div className="space-y-4 text-sm text-muted">
+        <p>
+          Ondas acústicas de alta energia que quebram microcalcificações, aumentam a
+          circulação e aceleram a recuperação de tecidos lesionados.
+        </p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>
+            Indicado para dores crônicas e lesões esportivas (tendinites, fascite
+            plantar).
+          </li>
+          <li>Procedimento não-invasivo realizado no consultório.</li>
+          <li>Estimula a resposta de cura natural do corpo.</li>
+        </ul>
+        <div className="mt-4">
+          <h4 className="font-semibold text-text mb-2">Como funciona:</h4>
+          <p className="text-xs text-muted">
+            O equipamento gera ondas de choque que são aplicadas na área afetada, promovendo uma resposta biológica que alivia a dor e acelera o processo de regeneração.
+          </p>
+        </div>
+      </div>
+    ),
+  },
 ];
 
 function Chip({ children }) {
@@ -376,45 +418,12 @@ export function Tratamentos() {
         </FadeIn>
 
         {/* Layout responsivo conforme o croqui */}
-        <div className="mt-10">
-          {/* Mobile: 1 coluna */}
-          <div className="grid grid-cols-1 gap-6 md:hidden">
-            {CARDS.map((card, index) => (
-              <FadeIn key={card.id} delay={0.02 * (index + 1)}>
-                <TratamentoCard item={card} />
-              </FadeIn>
-            ))}
-          </div>
-
-          {/* Desktop: Primeira linha com 3 cards, segunda linha com 2 centralizados */}
-          <div className="hidden md:block">
-            {/* Primeira linha: 3 cards */}
-            <div className="grid grid-cols-3 gap-6 mb-6">
-              <FadeIn delay={0.02}>
-                <TratamentoCard item={CARDS[0]} />
-              </FadeIn>
-              <FadeIn delay={0.04}>
-                <TratamentoCard item={CARDS[1]} />
-              </FadeIn>
-              <FadeIn delay={0.06}>
-                <TratamentoCard item={CARDS[2]} />
-              </FadeIn>
-            </div>
-
-            {/* Segunda linha: 2 cards centralizados */}
-            <div className="flex justify-center gap-6">
-              <div className="w-full max-w-[calc((100%-3rem)/3)]">
-                <FadeIn delay={0.08}>
-                  <TratamentoCard item={CARDS[3]} />
-                </FadeIn>
-              </div>
-              <div className="w-full max-w-[calc((100%-3rem)/3)]">
-                <FadeIn delay={0.10}>
-                  <TratamentoCard item={CARDS[4]} />
-                </FadeIn>
-              </div>
-            </div>
-          </div>
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+          {CARDS.map((card, index) => (
+            <FadeIn key={card.id} delay={0.05 * (index + 1)}>
+              <TratamentoCard item={card} />
+            </FadeIn>
+          ))}
         </div>
       </div>
     </section>
