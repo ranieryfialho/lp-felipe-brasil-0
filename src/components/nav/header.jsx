@@ -19,6 +19,7 @@ export function Header() {
     { href: "#diferenciais", label: "Diferenciais" },
     { href: "#depoimentos", label: "Depoimentos" },
     { href: "#especialista", label: "Sobre" },
+    { href: "#localizacao", label: "Localização" },
     { href: "#faq", label: "FAQ" },
   ];
 
@@ -26,18 +27,19 @@ export function Header() {
     e.preventDefault();
     const targetId = href.substring(1);
     const element = document.getElementById(targetId);
-    
+
     if (element) {
       const headerHeight = 80;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerHeight;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
-    
+
     setOpen(false);
   };
 
@@ -68,7 +70,13 @@ export function Header() {
             </a>
           ))}
           <Button asChild variant="gold" className="ml-2">
-            <a href="https://wa.me/+555585994326619?text=Ol%C3%A1,%20vim%20da%20landing%20page%20sobre%20os%20tratamentos%20e%20gostaria%20de%20saber%20mais." target="blank" aria-label="Agendar consulta">Agendar consulta</a>
+            <a
+              href="https://wa.me/+555585994326619?text=Ol%C3%A1,%20vim%20da%20landing%20page%20sobre%20os%20tratamentos%20e%20gostaria%20de%20saber%20mais."
+              target="blank"
+              aria-label="Agendar consulta"
+            >
+              Agendar consulta
+            </a>
           </Button>
         </nav>
 
@@ -100,7 +108,9 @@ export function Header() {
               </a>
             ))}
             <Button asChild variant="gold" className="w-full mt-1">
-              <a href="#contato" onClick={() => setOpen(false)}>Agendar consulta</a>
+              <a href="#contato" onClick={() => setOpen(false)}>
+                Agendar consulta
+              </a>
             </Button>
           </nav>
         </div>

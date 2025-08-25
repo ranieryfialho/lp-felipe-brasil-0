@@ -8,6 +8,7 @@ import { Depoimentos } from "./sections/Depoimentos";
 import { Especialista } from "./sections/Especialista";
 import { ProximoPasso } from "./sections/ProximoPasso";
 import { FAQ } from "./sections/FAQ";
+import { Localizacao } from "./sections/Localizacao";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Depoimentos />
         <Especialista />
         <ProximoPasso />
+        <Localizacao />
         <FAQ />
       </main>
     </>
