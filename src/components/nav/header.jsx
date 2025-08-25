@@ -28,7 +28,7 @@ export function Header() {
     const element = document.getElementById(targetId);
     
     if (element) {
-      const headerHeight = 80; // altura aproximada do header
+      const headerHeight = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
 
@@ -68,7 +68,7 @@ export function Header() {
             </a>
           ))}
           <Button asChild variant="gold" className="ml-2">
-            <a href="#contato" aria-label="Agendar consulta">Agendar consulta</a>
+            <a href="https://wa.me/+555585994326619?text=Ol%C3%A1,%20vim%20da%20landing%20page%20sobre%20os%20tratamentos%20e%20gostaria%20de%20saber%20mais." target="blank" aria-label="Agendar consulta">Agendar consulta</a>
           </Button>
         </nav>
 
