@@ -109,7 +109,7 @@ export function FAQ() {
                 Nossa equipe está pronta para esclarecer qualquer questão específica sobre seu caso
               </p>
               <Button asChild variant="gold" className="font-bold">
-                <a href="#contato">
+                <a href="https://wa.me/+555585994326619?text=Ol%C3%A1,%20vim%20da%20landing%20page%20sobre%20os%20tratamentos%20e%20gostaria%20de%20saber%20mais." target="blank">
                   Falar com especialista
                 </a>
               </Button>

@@ -81,7 +81,8 @@ export function Hero({ standalone = false }) {
 
           <div className="mt-8 flex justify-center md:justify-start">
             <Button asChild variant="gold" size="lg" className="shadow font-bold">
-              <a href="#contato" aria-label="Quero agendar minha consulta">
+              <a href="https://wa.me/+555585994326619?text=Ol%C3%A1,%20vim%20da%20landing%20page%20sobre%20os%20tratamentos%20e%20gostaria%20de%20saber%20mais." aria-label="Quero agendar minha consulta"
+              target="blank">
                 QUERO AGENDAR MINHA CONSULTA
               </a>
             </Button>
@@ -89,7 +90,7 @@ export function Hero({ standalone = false }) {
         </FadeIn>
 
         {/* Retrato */}
-        <FadeIn delay={0.15} className="relative order-first md:order-last justify-self-center md:justify-self-end">
+        <FadeIn delay={0.15} className="relative md:order-last justify-self-center md:justify-self-end">
           {/* Glow */}
           <div className="pointer-events-none absolute -top-6 -right-8 h-[280px] w-[280px] rounded-[32px] bg-[radial-gradient(closest-side,rgba(46,209,195,0.18),transparent)] blur-2xl md:h-[460px] md:w-[460px] lg:h-[520px] lg:w-[520px]" />
           {/* Card */}

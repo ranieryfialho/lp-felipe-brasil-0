@@ -5,13 +5,11 @@ import { Button } from "../components/ui/button";
 export function ProximoPasso() {
   return (
     <section id="cta-final" className="relative">
-      {/* Glow sutil ao fundo para destacar a faixa */}
       <div className="pointer-events-none absolute inset-x-0 -top-20 h-40 bg-[radial-gradient(60%_120px_at_50%_0%,rgba(102,224,219,0.10),transparent)]" />
 
       <div className="mx-auto max-w-7xl px-4 py-16 md:py-20">
         <CardSpotlight className="w-full">
           <div className="relative overflow-hidden rounded-2xl border border-line/40 bg-[linear-gradient(180deg,rgba(8,38,51,0.85),rgba(7,24,34,0.9))] p-8 shadow-2xl ring-1 ring-white/5 md:p-12">
-            {/* ornamentação suave */}
             <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(102,224,219,0.14),transparent)] blur-2xl" />
             <div className="pointer-events-none absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(227,199,160,0.14),transparent)] blur-2xl" />
 
@@ -37,11 +35,10 @@ export function ProximoPasso() {
               <FadeIn delay={0.15}>
                 <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                   <Button asChild variant="gold" className="w-full sm:w-auto font-bold">
-                    <a href="#contato" aria-label="Agendar avaliação com o especialista">
+                    <a href="https://wa.me/+555585994326619?text=Ol%C3%A1,%20vim%20da%20landing%20page%20sobre%20os%20tratamentos%20e%20gostaria%20de%20saber%20mais." target="blank" aria-label="Agendar avaliação com o especialista">
                       AGENDAR AVALIAÇÃO
                     </a>
                   </Button>
-                  {/* Botão secundário opcional (remova se não quiser) */}
                   <Button asChild variant="outline" className="w-full sm:w-auto">
                     <a href="#faq">Tirar dúvidas rápidas</a>
                   </Button>

@@ -31,7 +31,6 @@ export function Especialista() {
                   className="h-full w-full object-cover"
                 />
               </div>
-              {/* legenda opcional */}
               <figcaption className="px-4 py-3 text-xs text-muted">
                 Atendimento humanizado com foco em técnicas minimamente invasivas.
               </figcaption>
@@ -81,7 +80,7 @@ export function Especialista() {
           <FadeIn delay={0.2}>
             <div className="mt-8 flex justify-center md:justify-start">
               <Button asChild variant="gold" className="font-bold">
-                <a href="#contato" aria-label="Agendar avaliação com o especialista">
+                <a href="https://wa.me/+555585994326619?text=Ol%C3%A1,%20vim%20da%20landing%20page%20sobre%20os%20tratamentos%20e%20gostaria%20de%20saber%20mais." aria-label="Agendar avaliação com o especialista" target="blank">
                   Agendar avaliação com o especialista
                 </a>
               </Button>
