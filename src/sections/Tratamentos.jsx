@@ -27,7 +27,7 @@ const CARDS = [
         caption: "Aplicação guiada por ultrassom para maior precisão",
       },
       {
-        src: `${import.meta.env.BASE_URL}images/tratamentos/acido-hialuronico-procedimento.jpg`,
+        src: `${import.meta.env.BASE_URL}images/tratamentos/acido-hialuronico-procedimento.jpeg`,
         alt: "Aplicação de ácido hialurônico no joelho",
         caption: "Procedimento realizado no consultório com anestesia local",
       }
