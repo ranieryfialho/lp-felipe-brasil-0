@@ -343,14 +343,14 @@ function TratamentoCard({ item, className = "" }) {
 
                 <div className="pt-4 border-t border-line/30">
                   <Button asChild variant="gold" className="w-full font-bold">
-                    <a href="https://wa.me/+555585994326619?text=Ol%C3%A1,%20vim%20da%20landing%20page%20sobre%20os%20tratamentos%20e%20gostaria%20de%20saber%20mais."
+                    <a href="https://api.whatsapp.com/send/?phone=5585994326619&text=Ol%C3%A1%21+Vim+do+site+de+tratamentos+do+joelho+e+gostaria+de+agendar+uma+consulta&type=phone_number&app_absent=0"
                     target="blank">Quero este tratamento</a>
                   </Button>
                 </div>
               </div>
             </Modal>
             <Button asChild variant="gold" className="font-bold">
-              <a href="https://wa.me/+555585994326619?text=Ol%C3%A1,%20vim%20da%20landing%20page%20sobre%20os%20tratamentos%20e%20gostaria%20de%20saber%20mais." target="blank">Quero este tratamento</a>
+              <a href="https://api.whatsapp.com/send/?phone=5585994326619&text=Ol%C3%A1%21+Vim+do+site+de+tratamentos+do+joelho+e+gostaria+de+agendar+uma+consulta&type=phone_number&app_absent=0" target="blank">Quero este tratamento</a>
             </Button>
           </div>
         </div>

@@ -81,7 +81,7 @@ export function Hero({ standalone = false }) {
 
           <div className="mt-8 flex justify-center md:justify-start">
             <Button asChild variant="gold" size="lg" className="shadow font-bold">
-              <a href="https://wa.me/+555585994326619?text=Ol%C3%A1,%20vim%20da%20landing%20page%20sobre%20os%20tratamentos%20e%20gostaria%20de%20saber%20mais." aria-label="Quero agendar minha consulta"
+              <a href="https://api.whatsapp.com/send/?phone=5585994326619&text=Ol%C3%A1%21+Vim+do+site+de+tratamentos+do+joelho+e+gostaria+de+agendar+uma+consulta&type=phone_number&app_absent=0" aria-label="Quero agendar minha consulta"
               target="blank">
                 QUERO AGENDAR MINHA CONSULTA
               </a>

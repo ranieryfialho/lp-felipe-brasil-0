@@ -35,7 +35,7 @@ export function ProximoPasso() {
               <FadeIn delay={0.15}>
                 <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                   <Button asChild variant="gold" className="w-full sm:w-auto font-bold">
-                    <a href="https://wa.me/+555585994326619?text=Ol%C3%A1,%20vim%20da%20landing%20page%20sobre%20os%20tratamentos%20e%20gostaria%20de%20saber%20mais." target="blank" aria-label="Agendar avaliação com o especialista">
+                    <a href="https://api.whatsapp.com/send/?phone=5585994326619&text=Ol%C3%A1%21+Vim+do+site+de+tratamentos+do+joelho+e+gostaria+de+agendar+uma+consulta&type=phone_number&app_absent=0" target="blank" aria-label="Agendar avaliação com o especialista">
                       AGENDAR AVALIAÇÃO
                     </a>
                   </Button>

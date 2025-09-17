@@ -80,7 +80,7 @@ export function Especialista() {
           <FadeIn delay={0.2}>
             <div className="mt-8 flex justify-center md:justify-start">
               <Button asChild variant="gold" className="font-bold">
-                <a href="https://wa.me/+555585994326619?text=Ol%C3%A1,%20vim%20da%20landing%20page%20sobre%20os%20tratamentos%20e%20gostaria%20de%20saber%20mais." aria-label="Agendar avaliação com o especialista" target="blank">
+                <a href="https://api.whatsapp.com/send/?phone=5585994326619&text=Ol%C3%A1%21+Vim+do+site+de+tratamentos+do+joelho+e+gostaria+de+agendar+uma+consulta&type=phone_number&app_absent=0" aria-label="Agendar avaliação com o especialista" target="blank">
                   Agendar avaliação com o especialista
                 </a>
               </Button>
