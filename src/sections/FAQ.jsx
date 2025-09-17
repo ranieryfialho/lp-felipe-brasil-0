@@ -28,7 +28,7 @@ const FAQ_ITEMS = [
   {
     id: "agendamento",
     q: "Como agendar minha consulta?",
-    a: "Você pode agendar diretamente pelo botão de contato, falar com nossa equipe no WhatsApp ou usar o formulário na seção de contato da página."
+    a: "Você pode agendar diretamente pelo botão de contato, falar com nossa equipe no WhatsApp."
   },
   {
     id: "duracao",
