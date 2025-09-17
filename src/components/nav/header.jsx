@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-import { Menu, Stethoscope } from "lucide-react";
+import { Menu } from "lucide-react";
 import { cn } from "../../lib/cn";
+
+const LOGO_URL = `${import.meta.env.BASE_URL}images/logo-drFelipe.png`;
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -53,8 +55,8 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <a href="#" className="flex items-center gap-2">
-          <Stethoscope className="h-5 w-5 text-accent" />
+        <a href="/" className="flex items-center gap-2">
+          <img src={LOGO_URL} alt="Logo Dr. Felipe Brasil" className="h-6 w-auto" />
           <span className="font-title text-lg">Dr. Felipe Brasil</span>
         </a>
 
